@@ -11,7 +11,7 @@ public class Bootcamp {
     private final LocalDate dataInicial = LocalDate.now();
     private LocalDate dataFinal = dataInicial.plusDays(45);
     private Set<Dev> devsIncritos = new LinkedHashSet<>();
-    private Set<Conteudo> conteudosConcluidos = new LinkedHashSet<>();
+    private Set<Conteudo> conteudos = new LinkedHashSet<>();
     public String getNome() {
         return nome;
     }
@@ -40,10 +40,10 @@ public class Bootcamp {
         this.devsIncritos = devsIncritos;
     }
     public Set<Conteudo> getConteudosConcluidos() {
-        return conteudosConcluidos;
+        return conteudos;
     }
     public void setConteudosConcluidos(Set<Conteudo> conteudosConcluidos) {
-        this.conteudosConcluidos = conteudosConcluidos;
+        this.conteudos = conteudosConcluidos;
     }
     @Override
     public int hashCode() {
@@ -54,7 +54,7 @@ public class Bootcamp {
         result = prime * result + ((dataInicial == null) ? 0 : dataInicial.hashCode());
         result = prime * result + ((dataFinal == null) ? 0 : dataFinal.hashCode());
         result = prime * result + ((devsIncritos == null) ? 0 : devsIncritos.hashCode());
-        result = prime * result + ((conteudosConcluidos == null) ? 0 : conteudosConcluidos.hashCode());
+        result = prime * result + ((conteudos == null) ? 0 : conteudos.hashCode());
         return result;
     }
     @Override
@@ -91,10 +91,10 @@ public class Bootcamp {
                 return false;
         } else if (!devsIncritos.equals(other.devsIncritos))
             return false;
-        if (conteudosConcluidos == null) {
-            if (other.conteudosConcluidos != null)
+        if (conteudos == null) {
+            if (other.conteudos != null)
                 return false;
-        } else if (!conteudosConcluidos.equals(other.conteudosConcluidos))
+        } else if (!conteudos.equals(other.conteudos))
             return false;
         return true;
     }
