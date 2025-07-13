@@ -1,7 +1,6 @@
 package br.com.dio.desafio.dominio;
 
 import java.time.LocalDate;
-import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
@@ -12,39 +11,51 @@ public class Bootcamp {
     private LocalDate dataFinal = dataInicial.plusDays(45);
     private Set<Dev> devsIncritos = new LinkedHashSet<>();
     private Set<Conteudo> conteudos = new LinkedHashSet<>();
+
     public String getNome() {
         return nome;
     }
+    
     public void setNome(String nome) {
         this.nome = nome;
     }
+    
     public String getDescricao() {
         return descricao;
     }
+    
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
+    
     public LocalDate getDataInicial() {
         return dataInicial;
     }
+    
     public LocalDate getDataFinal() {
         return dataFinal;
     }
+    
     public void setDataFinal(LocalDate dataFinal) {
         this.dataFinal = dataFinal;
     }
+    
     public Set<Dev> getDevsIncritos() {
         return devsIncritos;
     }
+    
     public void setDevsIncritos(Set<Dev> devsIncritos) {
         this.devsIncritos = devsIncritos;
     }
-    public Set<Conteudo> getConteudosConcluidos() {
+    
+    public Set<Conteudo> getConteudos() {
         return conteudos;
     }
-    public void setConteudosConcluidos(Set<Conteudo> conteudosConcluidos) {
-        this.conteudos = conteudosConcluidos;
+    
+    public void setConteudos(Set<Conteudo> conteudos) {
+        this.conteudos = conteudos;
     }
+    
     @Override
     public int hashCode() {
         final int prime = 31;
@@ -57,6 +68,7 @@ public class Bootcamp {
         result = prime * result + ((conteudos == null) ? 0 : conteudos.hashCode());
         return result;
     }
+    
     @Override
     public boolean equals(Object obj) {
         if (this == obj)
@@ -99,5 +111,10 @@ public class Bootcamp {
         return true;
     }
 
+    @Override
+    public String toString() {
+        return "Bootcamp [nome=" + nome + ", descricao=" + descricao + ", dataInicial=" + dataInicial + ", dataFinal="
+                + dataFinal + ", devsIncritos=" + devsIncritos + ", conteudos=" + conteudos + "]";
+    }
     
 }
